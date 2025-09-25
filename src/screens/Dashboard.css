@@ -1,0 +1,28 @@
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.notification {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.collectors-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collectors-table th, .collectors-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.collectors-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
