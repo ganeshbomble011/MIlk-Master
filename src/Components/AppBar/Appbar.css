@@ -1,0 +1,9 @@
+/** @format */
+
+.nav-container {
+  background-color: var(--kendo-color-primary);
+}
+
+.k-appbar-light {
+  background-color: var(--kendo-color-primary) !important;
+}
