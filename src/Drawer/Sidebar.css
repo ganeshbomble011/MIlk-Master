@@ -1,0 +1,149 @@
+/* === GLOBAL RESET === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === DASHBOARD LAYOUT === */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  padding: 1rem 0.5rem;
+  transition: width 0.3s ease;
+  color: white;
+  position: relative;
+
+  /* === Background image === */
+  background-image: url('https://thumbs.dreamstime.com/b/stone-podium-against-blurry-background-green-field-milk-cows-spotted-displaying-dairy-products-vertical-layout-332090953.jpg'); /* adjust path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* === Optional overlay effect === */
+  background-color: rgba(0, 0, 0, 0.6); /* dark tint for readability */
+  background-blend-mode: overlay;
+
+  /* === Shape & shadow === */
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* === SIDEBAR TOP (logo + toggle button) === */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Toggle button */
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* === MENU ITEMS === */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  margin: 0.5rem 0;
+}
+
+/* Links */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active link */
+.sidebar-link.active {
+  background-color: white;
+  color: #0d1b2a;
+  font-weight: bold;
+}
+
+/* Icon image */
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.sidebar.collapsed .sidebar-icon {
+  margin: 0 auto;
+}
+
+/* Hide text in collapsed mode */
+.sidebar.collapsed .sidebar-text {
+  display: none;
+}
+
+/* Separator line */
+.sidebar-separator {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem 0;
+}
+
+/* === MAIN CONTENT === */
+.dashboard-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background: white;
+  overflow-y: auto;
+}
