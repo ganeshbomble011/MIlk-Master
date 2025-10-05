@@ -8,7 +8,7 @@ import {
 import { toast } from 'react-toastify';
 
 export const baseQueryWithReauth = fetchBaseQuery({
-  baseUrl: process.env.API_BASE_URL,
+  baseUrl: 'http://maheshjagzap-001-site1.qtempurl.com/api/',
   prepareHeaders: (headers: any) => {
     let count = 0;
     const validUser = JSON.parse(

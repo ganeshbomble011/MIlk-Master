@@ -6,7 +6,7 @@ import Form from '../../Form/Form';
 import { FormData, FormFieldInit } from '../../types/formTypes';
 import React, { useRef, useState } from 'react';
 import { LABEL_COLLECTOR } from '../../constants/Common';
-// import { OkGrid } from 'elab_components';
+import { OkGrid } from 'elab_components';
 import { transformPayloadWithArray } from '../../Form/FormPayload';
 import {
   ActionType,
@@ -173,15 +173,12 @@ const formaStyle: React.CSSProperties = {
 function Collector() {
   const formRef = useRef<HTMLFormElement>(null);
   const userData = JSON.parse(sessionStorage.getItem('userDetails') || '{}');
-
   const { data: getGridConfiguration, isFetching: isLoadingGrid } =
     useGetGridConfigurationQuery(COLLECTOR_GRID);
   // const { handleUpdatedColumnConfig } = useUpdateGridConfig(COLLECTOR_GRID);
-
   const [createPrice] = useCreatePriceMutation();
   const [updatePrice] = useUpdatePriceMutation();
   const [deletePrice] = useDeletePriceMutation();
-
   const [editValue, setEditValue] = useState<{ [key: string]: unknown }>({});
   const [selectedFilterData, setSelectedFilterData] =
     useState<SelectedFilterData>();
@@ -189,12 +186,9 @@ function Collector() {
     getGridConfiguration?.data?.formButtons ?? []
   );
   const payload = paginationPayload(selectedFilterData);
-
   const { data: getprice, isLoading: isLoadingPrice } =
     useGetPriceQuery(payload);
-
   const formOnchange = (): void => {};
-
   const handleSubmit = async (data: FormData) => {
     const result = transformPayloadWithArray(data, formFields);
     let payload = {
@@ -206,7 +200,6 @@ function Collector() {
       createdUserID: userData.userID,
       modifiedUserId: 0,
     };
-
     // if (editValue == null) {
     //   createPrice(payload)
     //     .unwrap()
@@ -229,7 +222,6 @@ function Collector() {
     //         ? 0
     //         : result.purchaseGroupID,
     //   };
-
     //   updatePrice(payload)
     //     .unwrap()
     //     .then((respond: any) => {
@@ -244,14 +236,12 @@ function Collector() {
     // setEditValue(null);
     // formRef.current.resetForm();
   };
-
   const handelGridData = (
     data: React.SetStateAction<{ [key: string]: unknown }>,
     item: ActionType
   ) => {
     setEditValue(data);
   };
-
   const handleExternalButtons = (ev: {
     selectedState: Record<
       string,
@@ -264,17 +254,14 @@ function Collector() {
         { priceID: number; modifiedByUserID: number }
       >
     );
-
     if (selectedItems.length === 0) {
       toast.error('Please select at least one row to delete');
       return;
     }
-
     const payload = selectedItems.map((item) => ({
       priceID: item.priceID,
       modifiedUserId: userData?.userID || 1,
     }));
-
     // deletePrice(payload)
     //   .unwrap()
     //   .then((respond: any) => {
@@ -285,10 +272,8 @@ function Collector() {
     //   .catch((error) => {
     //     toast.error(error?.data?.message || 'Failed to delete Price Master');
     //   });
-
     // setSelectedFilterData({});
   };
-
   return (
     <Container>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -315,7 +300,6 @@ function Collector() {
               />
             </div>
           )}
-
           <div
             style={{
               marginTop: '26px',

@@ -11,14 +11,14 @@ export const priceMasterApi = createApi({
   endpoints: (builder: any) => ({
     getPrice: builder.query({
       query: (payload: any) =>
-        `PriceMaster?rowFirst=${payload.rowFirst ?? 0}&rowLast=${
+        `collector?rowFirst=${payload.rowFirst ?? 0}&rowLast=${
           payload.rowLast ?? LARGEST_COUNT_FOR_API
         }`,
       providesTags: ['price'],
     }),
     createPrice: builder.mutation({
       query: (payload: any) => ({
-        url: 'PriceMaster',
+        url: 'collector',
         method: 'POST',
         body: payload,
       }),
@@ -26,7 +26,7 @@ export const priceMasterApi = createApi({
     }),
     updatePrice: builder.mutation({
       query: (payload: any) => ({
-        url: `PriceMaster?PriceID=${payload.priceID}`,
+        url: `collector?PriceID=${payload.priceID}`,
         method: 'PUT',
         body: payload,
       }),
@@ -34,7 +34,7 @@ export const priceMasterApi = createApi({
     }),
     deletePrice: builder.mutation({
       query: (payload: any) => ({
-        url: `PriceMaster`,
+        url: `collector`,
         method: 'DELETE',
         body: payload,
       }),

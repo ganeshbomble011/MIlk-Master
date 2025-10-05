@@ -5,7 +5,7 @@ import './Dashboard.css';
 const Dashboard: React.FC = () => {
   return (
     <div className='dashboard'>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main className='dashboard-content'>
         {/* This is the main page content area */}
         <h1>Welcome to Dashboard</h1>
