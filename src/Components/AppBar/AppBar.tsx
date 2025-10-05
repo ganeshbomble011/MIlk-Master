@@ -15,6 +15,7 @@ import { OkButton } from 'elab_components';
 import './Appbar.css';
 import { Popover } from '@progress/kendo-react-tooltip';
 import { Button } from '@progress/kendo-react-buttons';
+import Sidebar from '../../Drawer/Sidebar';
 // import AppBaruser from '../../../public/Assets/user.png';
 
 interface AppBarInit {
@@ -26,7 +27,6 @@ function AppBar({ handleClick }: AppBarInit) {
 
   const anchor = React.useRef(null);
   const avatarRef = useRef<HTMLDivElement>(null);
-
   const navigate = useNavigate();
   const location = useLocation();
   const [themeModel, setThemeModel] = useState<boolean>(false);

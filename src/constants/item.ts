@@ -18,24 +18,24 @@ export interface DrawerRoutingInterface {
 }
 
 export const domain_items = [
-  {
-    text: '',
-    id: 0,
-    expanded: false,
-    selected: false,
-    UnselectedIcon:
-      '../Assets/DrawerIcons/UnSelectedMenu/MastersUnselectedIcon.png',
-    SelectedIcon: '../Assets/DrawerIcons/SelectedMenu/MastersSelectedIcon.png',
-    className: 'menu_list',
-    accessKey: [COLLECTOR_GRID],
-    expandIcon: true,
-  },
+  // {
+  //   text: '',
+  //   id: 0,
+  //   expanded: false,
+  //   selected: false,
+  //   UnselectedIcon:
+  //     '../Assets/DrawerIcons/UnSelectedMenu/MastersUnselectedIcon.png',
+  //   SelectedIcon: '../Assets/DrawerIcons/SelectedMenu/MastersSelectedIcon.png',
+  //   className: 'menu_list',
+  //   accessKey: [COLLECTOR_GRID],
+  //   expandIcon: true,
+  // },
   {
     id: 1,
     text: LABEL_COLLECTOR,
     route: ROUTE_COLLECTOR,
     parentId: 0,
-    className: 'sub_menu',
+    className: '',
     accessKey: COLLECTOR_GRID,
   },
   {

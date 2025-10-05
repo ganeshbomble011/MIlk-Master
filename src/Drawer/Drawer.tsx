@@ -17,6 +17,7 @@ import { SvgIcon } from '@progress/kendo-react-common';
 import { domain_items } from '../constants/item';
 import { FOOTER_COPYRIGHT_TEXT } from '../constants/Common';
 import { filterForAccess } from '../utils/accessFilter';
+import Sidebar from './Sidebar';
 
 const CustomItem = (props: DrawerItemProps) => {
   const { visible, expandIcon, ...others } = props;
@@ -42,17 +43,16 @@ const DrawerRouterContainer = (props: DrawerItemProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [drawerExpanded, setDrawerExpanded] = React.useState(true);
-
   const [items, setItems] = useState<DrawerItemProps>(
     filterForAccess(domain_items)
   );
 
   useEffect(() => {
     const filteredItems = filterForAccess(domain_items);
-
     setItems(filteredItems);
   }, []);
 
+  // Corrected function here
   const handleClick = () => {
     setDrawerExpanded(!drawerExpanded);
   };
@@ -92,7 +92,7 @@ const DrawerRouterContainer = (props: DrawerItemProps) => {
     });
     if (currentItem.route) {
       navigate(currentItem.route);
-      setDrawerExpanded(!drawerExpanded);
+      setDrawerExpanded(drawerExpanded);
     }
 
     setItems(newData);

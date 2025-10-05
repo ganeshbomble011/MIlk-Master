@@ -1,12 +1,10 @@
-/** @format */
-
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Screens
-import { Dashboard } from '../screens/Admin-Dashboard/Dashboard';
+import { Dashboard } from '../../src/screens/Admin-Dashboard/Dashboard';
 import { Login } from '../screens/login/Login';
 import { Collector } from '../screens/Collector';
 
@@ -24,7 +22,6 @@ import {
   LABEL_PAGE_NOT_DETAILS,
 } from '../constants/Common';
 
-import { Container } from '../container/container';
 import { AppBar } from '../Components/AppBar/AppBar';
 import { AppBarSection } from '@progress/kendo-react-layout';
 import { DrawerRouterContainer } from '../Drawer/Drawer';
@@ -51,13 +48,13 @@ const routes = [
     id: 2,
     path: ROUTE_DASHBOARD,
     component: <Dashboard />,
-    hasDrawer: false,
+    hasDrawer: true,
   },
   {
     id: 3,
     path: ROUTE_COLLECTOR,
     component: <Collector />,
-    hasDrawer: false,
+    hasDrawer: true,
   },
 ];
 
@@ -66,6 +63,9 @@ const AppRouter = () => {
     <div className='app-container'>
       <div className='content'>
         <Routes>
+          {/* ✅ Redirect root "/" to login page */}
+          <Route path='/' element={<Navigate to={ROUTE_LOGIN} />} />
+
           {routes.map((route) => (
             <Route
               key={route.id}
@@ -84,9 +84,11 @@ const AppRouter = () => {
               }
             />
           ))}
+
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
+
       <div className='screen-footer'>
         <AppBarSection>{FOOTER_COPYRIGHT_TEXT}</AppBarSection>
       </div>

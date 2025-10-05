@@ -1,28 +1,31 @@
-.dashboard-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
+/** @format */
 
-.notification {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.collectors-table {
+.qcMainCardBackground {
+  background-color: var(--kendo-theme-color-base);
+  padding: 80px;
   width: 100%;
-  border-collapse: collapse;
+  max-width: 306px;
+  border-radius: 31px;
+  cursor: pointer;
+}
+.qcMainCardBackground:hover {
+  background-color: var(--kendo-color-hover);
 }
 
-.collectors-table th, .collectors-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.qcMainInsideCardBackground {
+  background-color: var(--kendo-color-primary);
+  padding: 24px;
+  border-radius: 15px;
 }
-
-.collectors-table th {
-  background-color: #f2f2f2;
-  text-align: left;
+.qcMainContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 36px;
+  position: 'absolute';
 }

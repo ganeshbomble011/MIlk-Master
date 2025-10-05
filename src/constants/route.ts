@@ -2,7 +2,7 @@
 
 export const ROUTE_LOGIN = '/Login';
 export const ROUTE_DASHBOARD = '/Dashboard';
-export const ROUTE_COLLECTOR = 'Collector';
+export const ROUTE_COLLECTOR = '/Collector';
 export const ROUTE_CATEGORY_MASTER = '/category-master';
 export const ROUTE_GROUP_MASTER = '/group-master';
 export const ROUTE_STORAGE_CONDITION_MASTER = '/storage-condition-master';
